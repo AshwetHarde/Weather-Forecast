@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-=======
-=======
->>>>>>> 1b9a753d43a3574c89b561b355d4621357b44520
 # SkyShow - Weather Forecast Web Application
 
 SkyShow is a user-friendly weather application that provides real-time weather updates based on user location. The app offers a clear and attractive interface, displaying current weather conditions, hourly forecasts, and daily summaries.
