@@ -1,0 +1,598 @@
+/* General body styling */
+/* App.css */
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif; /* Updated to Open Sans */
+  background-image: url('/background/f.jpg'); /* Default desktop background */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  width: 100vw; /* Ensure body doesn't exceed viewport width */
+  position: relative; /* Ensure fixed elements work properly */
+}
+
+/* Mobile Background */
+@media (max-width: 600px) { /* Adjust the breakpoint as needed */
+  body {
+    background-image: url('/background/image.png'); /* Mobile background */
+  }
+}
+
+/* Prevent horizontal scrolling for the entire page */
+html {
+  overflow-x: hidden; /* Ensure no horizontal scrolling */
+  width: 100vw; /* Ensure viewport width */
+}
+
+.content {
+  height: 100vh; /* Take full height */
+}
+
+.content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+/* Container for weather elements */
+.container {
+  width: 100%; /* Full width for mobile */
+  max-width: 400px; /* Maximum width for larger screens */
+  margin: 0 auto; /* Center the container */
+  padding: 10px; /* Add padding as needed */
+}
+
+
+/* Scrollbar styling for WebKit browsers (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  width: 0px; /* Width of the scrollbar */
+}
+
+
+
+/* Hide scrollbar for Firefox */
+.scroll-container {
+  scrollbar-width: none; /* Firefox */
+}
+
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 100;
+}
+
+/* Main search container */
+.search-container {
+  padding-top: 12px;
+  width: 100%;
+  max-width: 500px; /* Limit search bar width on desktop */
+  margin: 35px auto; /* Center the search bar */
+  position: relative; /* Positioning relative for suggestions */
+}
+
+/* Input and icon wrapper */
+.search-input-wrapper {
+  display: flex;
+  align-items: center; /* Vertically center the icon and input */
+  background-color: rgba(255, 255, 255, 0.466);
+  border-radius: 30px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 5px 10px; /* Padding inside the input area */
+}
+
+/* Search icon styling */
+.search-icon {
+  font-size: 35px;
+  color: #ffffff; /* Icon color */
+  margin-right: 8px; /* Space between icon and input */
+  margin-left: 10px;
+  margin-top: 7px;
+}
+
+/* Input field styling */
+.search-input {
+  background-color: rgba(255, 255, 255, 0);
+  color: #ffffff;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 20px;
+  text-align: left; /* Align text to the left */
+  transition: border-color 0.3s; /* Smooth focus border transition */
+}
+
+/* Placeholder color for input field */
+.search-input::placeholder {
+  color: #ffffff; /* Light grey placeholder */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 600px) {
+  .search-container {
+    max-width: 85%; /* Allow more width on mobile */
+    margin: 20px auto; /* Center with less margin */
+  }
+  .search-input {
+    font-size: 16px; /* Keep input text size */
+    padding: 10px; /* Maintain padding */
+  }
+  .search-icon {
+    font-size: 24px; /* Adjust icon size slightly for mobile */
+  }
+}
+
+/* Suggestions styling */
+.suggestions {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px; /* Create space between input and suggestions */
+  border: 1px solid #ccc;
+  background: white;
+  position: absolute;
+  width: 100%; /* Match the width of the search bar */
+  left: 0; /* Align left to match search input */
+  border-radius: 10px;
+  z-index: 1000;
+  max-height: 150px;
+  overflow-y: auto; /* Add scroll if the list gets too long */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhance shadow for more depth */
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.suggestions::-webkit-scrollbar {
+  display: none; 
+}
+
+/* Hide scrollbar for Firefox */
+.suggestions {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for IE and Edge */
+.suggestions {
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Individual suggestion styling */
+.suggestions li {
+  padding: 12px 15px;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.2s ease; /* Smooth hover effect */
+  font-size: 16px;
+  border-bottom: 1px solid #eee; /* Separate items */
+}
+
+.suggestions li:last-child {
+  border-bottom: none; /* Remove border for last item */
+}
+
+/* Hover state for suggestion */
+.suggestions li:hover {
+  background-color: #f5f5f5; /* Slightly darker hover state */
+}
+
+/* Mobile-specific styles */
+@media (max-width: 600px) {
+  .suggestions {
+    max-width: 100%; /* Adjust width to fit mobile screen */
+    border-radius: 8px;
+  }
+}
+
+.current-weather-container {
+  max-width: 300px; /* Maximum width for the current weather section */
+  margin: 20px auto; /* Center it with auto margins */
+  text-align: center; /* Center text inside */
+  padding: 20px; /* Padding for the container */
+  border-radius: 25px; /* Optional: rounded corners */
+  margin-top: -80px;
+}
+
+/* City name styling */
+.city{
+  margin-top: -20px;
+  align-items: center;
+  font-size: 14px;
+  color: white;
+  }
+  
+  .city-name{
+  font-size: 25px;
+  
+  }
+  
+  .location-icon{
+    font-size: 23px;
+    color: white;
+    
+  }
+
+
+
+.current-temperature {
+  font-family: 'Open Sans', sans-serif; /* Updated to Open Sans */
+  font-size: 65px; /* Adjust as needed */
+  text-align: center;
+  margin-bottom: -5px;
+  color: white;
+}
+
+/* .display{
+  padding-right: 20px;
+} */
+
+/* Weather details container */
+.weather-details {
+
+  align-items: center;
+}
+
+/* Wind speed styling */
+.wind-speed {
+  display: flex;
+  align-items: center;
+}
+
+
+
+/* Wind speed icon */
+.wind-speed .icon {
+  width: 30px;
+  height: 30px;
+  margin-left: 80px;
+  margin-top: 5px;
+
+}
+
+/* Weather condition styling */
+.weather-condition {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.text{
+  color: white;
+  font-size: 14px;
+  text-align: left;
+}
+
+
+.wtext{
+  color: white;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
+.small-icon {
+  width: 40px; /* Adjust icon size as needed */
+  height: 40px;
+
+}
+
+
+.big-icon {
+  width: 85px; /* Adjust the size to your liking */
+  height: 85px;
+
+}
+
+.scroll-container {
+  overflow-x: auto; /* Allow horizontal scrolling */
+  white-space: nowrap; /* Prevent wrapping */
+  padding: 10px ; /* Add some vertical padding */
+  max-width: 100%; /* Ensure it uses available width */
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.scroll-container::-webkit-scrollbar {
+  display: none; 
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.scroll-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scroll-items {
+  display: inline-flex; /* Align items in a single line */
+}
+
+
+.hourly {
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+}
+
+
+.txt24{
+  font-size: 20px; /* Adjust as needed */
+  text-align: center;
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.764);
+ 
+}
+.hourly-item {
+  display: inline-block; /* Allow items to sit side by side */
+  height: 165px;
+  width: 75px; /* Set a fixed width for items */
+  margin-right: 5px; /* Add some spacing between items */
+  margin-left: 15px; /* Add some spacing between items */
+  text-align: center; /* Center the text */
+  background-color: rgba(255, 255, 255, 0.245); /* White background with 80% opacity */  border-radius: 50px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding-top: 15px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 50;
+}
+
+
+
+
+/* Desktop styles */
+@media (min-width: 769px) {
+  .hourly-item {
+    display: inline-block; /* Allow items to sit side by side */
+    height: 200px; /* Increased height for desktop */
+    width: 100px; /* Increased width for desktop */
+    margin-right: 10px; /* Add more spacing between items */
+    margin-left: 20px; /* Add more spacing between items */
+    text-align: center; /* Center the text */
+    background-color: rgba(255, 255, 255, 0.245); /* White background with 80% opacity */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding-top: 20px; /* Increased padding for desktop */
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500; /* Changed to valid weight */
+  }
+}
+
+
+.daily-forecast {
+  margin-top: 20px; /* Space above the daily forecast */
+}
+
+.daily-items-container {
+  position: relative; /* Positioning context for absolute elements */
+  display: flex;
+  flex-direction: column; /* Stack daily items in a new column */
+  max-height: 80px; /* Set maximum height for the container */
+  overflow: hidden; /* Hide overflow of the container */
+  background-color: rgba(255, 255, 255, 0.245); /* White background with opacity */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 50%; /* Set width for larger screens */
+  margin: 0 auto; /* Center the container */
+  margin-bottom: 30px;
+}
+
+.scrollable-content {
+  overflow-y: auto; /* Allow vertical scrolling for the content */
+  max-height: 80px; /* Set the same max height to match the container */
+  padding: 10px; /* Add padding for better aesthetics */
+}
+
+.scroll-indicators {
+  position: absolute; /* Fixed positioning relative to the container */
+  right: 10px; /* Distance from the right */
+  top: 10px; /* Distance from the top */
+  display: flex;
+  flex-direction: column; /* Stack icons vertically */
+  justify-content: space-between; /* Space between the icons */
+  height: calc(100% - 20px); /* Adjust height to fit the container */
+}
+
+.icon-up, .icon-down {
+  color: white; /* Icon color */
+  cursor: pointer; /* Change cursor to indicate clickable icons */
+}
+
+
+
+/* Media query for small screens */
+@media (max-width: 600px) { /* Adjust the max-width as needed */
+  .daily-items-container {
+    width: 90%; /* Full width for small screens */
+  }
+}
+
+.daily-item {
+  display: flex;
+  align-items: center; /* Align items in the center */
+  margin: 10px 0; /* Space between items */
+  text-align: left; /* Align text to the left */
+  background: #9c81f400; /* Light blue background */
+  border-radius: 15px; /* Rounded corners */
+  padding-bottom: 10px; /* Padding inside the item */
+  color: white;
+  font-weight: 400;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.daily-item p {
+  margin: 0 5px; /* Space between elements */
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.daily-items-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+/* Hide scrollbar for Firefox */
+.daily-items-container {
+  scrollbar-width: none; /* Hide scrollbar */
+}
+
+/* Hide scrollbar for IE and Edge */
+.daily-items-container {
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+
+
+/* City list styling */
+.city-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items */
+  width: 100%; /* Full width for proper centering */
+  position: relative; /* Positioning for absolute elements */
+}
+
+.city-list ul {
+  list-style: none; /* Remove default list styling */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  border: 1px solid #ccc; /* Border for the dropdown */
+  background: white; /* Background color */
+  max-height: 150px; /* Max height for the dropdown */
+  overflow-y: auto; /* Allow scrolling if needed */
+  width: calc(80% - 22px); /* Match search bar width */
+  z-index: 1000; /* Ensure it appears above other elements */
+  position: absolute; /* Position it absolutely to the search bar */
+  top: 60px; /* Adjust based on your layout */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.city-list ul::-webkit-scrollbar {
+  display: none; 
+}
+
+/* Hide scrollbar for Firefox */
+.city-list ul {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for IE and Edge */
+.city-list ul {
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.city-list li {
+  margin: 5px 0; /* Space between city names */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.2s; /* Smooth background change */
+  padding: 10px; /* Padding inside list items */
+}
+
+.city-list li:hover {
+  background-color: #e0e7ff; /* Highlight on hover */
+}
+
+
+.app-header {
+  background-color: #9c81f4; /* Example background color */
+  color: white; /* Text color */
+  text-align: center; /* Center text */
+  padding: 10px; /* Padding */
+  border-radius: 0 0 20px 20px; /* Rounded bottom corners */
+}
+
+
+/* Ensure the main container fills the height of the page */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.search-container, .weather-container {
+  flex-grow: 1;
+}
+
+/* Footer styles */
+.app-footer {
+  background-color: #333333d4;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+  width: auto;
+  position: relative;
+  border-radius: 25px 25px 0 0;
+}
+
+/* Responsive font sizes */
+.app-footer {
+  font-size: 16px; /* Default font size */
+}
+
+/* Adjust font size for small screens */
+@media (max-width: 600px) {
+  .app-footer {
+    font-size: 12px; /* Smaller font size for mobile devices */
+  }
+}
+
+/* Adjust font size for medium screens */
+@media (min-width: 601px) and (max-width: 960px) {
+  .app-footer {
+    font-size: 15px; /* Slightly larger font size for tablets */
+  }
+}
+
+/* Adjust font size for larger screens */
+@media (min-width: 961px) {
+  .app-footer {
+    font-size: 16px; /* Default font size for larger screens */
+  }
+}
+
+
+/* Error message styles */
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+
+
+.hr {
+  width: 95%; /* Set the desired width (adjust as needed) */
+  height: 4px; /* Set the height of the line */
+  background-color: rgba(248, 248, 246, 0.464); /* Set the color of the line */
+  border: none; /* Remove the default border */
+  margin: 20px auto; /* Center the line and add some margin */
+  border-radius: 25px;
+}
+
+
+
+/* Loader.css */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height to center the loader */
+}
+
+.spinner {
+  /* Use either margin-top or transform */
+  margin-top: -600px; /* or transform: translateY(-20px); */
+  border: 8px solid rgba(255, 255, 255, 0.1);
+  border-left-color: #ffffff;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
