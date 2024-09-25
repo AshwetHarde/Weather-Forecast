@@ -12,10 +12,10 @@ Responsive Design: Optimized for both mobile and desktop devices.
 
 ## Technologies Used
 
-React
-Open Meteo API (or your chosen weather API)
-CSS for styling
-React Icons for user interface enhancements
+### React
+### Open Meteo API (or your chosen weather API)
+### CSS for styling
+### React Icons for user interface enhancements
 
 ## Accuracy of Weather Data
 
