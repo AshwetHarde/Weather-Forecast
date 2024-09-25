@@ -18,9 +18,3 @@ SkyShow is a user-friendly weather application that provides real-time weather u
 
 ## Accuracy of Weather Data
 While the weather application provides real-time weather updates based on user location and input, it is important to note that the accuracy of the weather data is not guaranteed. The app relies on third-party weather APIs to retrieve information, and factors such as data source reliability, environmental conditions, and variations in local weather patterns can affect the precision of the forecasts. Users are encouraged to use the app as a helpful guide for weather information but should also consider consulting official meteorological services for critical decisions related to weather conditions.
-
-
-<<<<<<< HEAD
->>>>>>> 1b9a753d43a3574c89b561b355d4621357b44520
-=======
->>>>>>> 1b9a753d43a3574c89b561b355d4621357b44520
