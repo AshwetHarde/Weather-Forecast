@@ -5,9 +5,13 @@ SkyShow is a user-friendly weather application that provides real-time weather u
 ## Features
 
 Current Weather: Displays temperature, weather conditions, and wind speed.
+
 Hourly Forecast: Shows detailed weather predictions for the next 24 hours.
+
 Daily Forecast: Provides a summary of the upcoming week's weather.
+
 User Location: Automatically detects and displays weather based on user location or allows manual search.
+
 Responsive Design: Optimized for both mobile and desktop devices.
 
 ## Technologies Used
